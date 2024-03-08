@@ -802,6 +802,8 @@ footer{
 .bookpage .bookdetail .book-info .infolist li .label{
      width: 150px;
      font-weight: 900;
+     padding-left: 20px;
+     position: relative;
 }
 .bookpage .bookdetail .book-info .infolist li .label::after{
      content: "";
