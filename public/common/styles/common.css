@@ -156,6 +156,22 @@ header::after {
      z-index: 2;
 }
 
+header.scrollTop {
+     width: 100%;
+     position: fixed;
+     left: 0;
+     top: 0;
+     z-index: 9999;
+}
+header.scrollTop::after {
+     position: fixed;
+     top: 22px;
+}
+
+.scrollTop .topmenu {
+     display: none;
+}
+
 footer{
      margin-top: auto;
 }
@@ -653,6 +669,37 @@ footer{
      color: #888;
 }
 
+.subpage {
+     padding: 50px 0 100px;
+}
+
+.subpage .contentbox .titlebar{
+     display: flex;
+     justify-content:space-between;
+     align-items: center;
+     border-bottom: solid 1px #ddd;
+     margin-bottom: 10px;
+     padding-bottom: 10px;
+     background: url("/images/event-end-img.png") left top/100%;
+}
+
+.subpage .contentbox .titlebar > h1 {
+     font-size: 35px;
+     font-weight: 900;
+     color: #666;
+}
+
+.subpage .contentbox .titlebar .pagenavi {
+     color: #aeaeae;
+}
+
+.subpage .contentbox .titlebar .pagenavi > strong {
+     color: #222;
+     display: inline-block;
+     background: url("/images/icon_16_arrow_small_right.svg") no-repeat 0 center/16px;
+     padding-left: 16px;
+}
+
 @media screen and (max-width: 1024px) {
      .system > button {
           width: 25px;
@@ -674,6 +721,9 @@ footer{
 }
 
 @media screen and (max-width: 767px) {
+     header.scrollTop::after {
+          top: 14px;
+     }
      header nav ul > li {
           flex: auto;
           padding-right: 10px;
@@ -810,5 +860,8 @@ footer{
 
      .maincontents .notice .noticebox .newsitem span{
           display: block;
+     }
+     .subpage .contentbox .titlebar > h1 {
+          font-size: 20px;
      }
 }
