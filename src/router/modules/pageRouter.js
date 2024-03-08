@@ -1,3 +1,9 @@
+const withPrefix = (prefix, routes) =>
+    routes.map((route) => {
+        route.path = prefix + route.path;
+        return route;
+    });
+
 const pageRouter = {
     path: "/",/*컴포넌트 경로*/
     name: "layout",/*컴포넌트 이름*/
@@ -9,11 +15,17 @@ const pageRouter = {
             name: "main",
             component: () => import("@/views/main.vue"),
         },
-        {
-            path: "/book",
-            name: "book",
-            component: () => import("@/views/Books.vue"),
-        },
+        
+        ...withPrefix("/book", [
+            {
+                path: "/",
+                component: () => import("@/views/Books.vue")
+            },
+            {   name: "book",
+                path: "/:tapId",
+                component: () => import("@/views/Books.vue"),
+            },
+        ]),
     ],
 };
 

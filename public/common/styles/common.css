@@ -467,21 +467,33 @@ footer{
      margin: 0 100px;
      position: relative;
 }
+.slick-arrow { 
+     width: 42px; height: 42px; background: url("/images/arrow-icon.png") no-repeat 0 0/100%; font-size: 0;position: absolute; top: 50%; margin-top: -55px; z-index: 9; 
+}
 
-.maincontents .mainslider .rollimg {
+.slick-arrow.slick-prev { 
+     left: 10px; 
+} 
+
+.slick-arrow.slick-next { 
+     right: 10px; transform: rotate(180deg); 
+}
+
+.rollimg {
      padding: 0 10px;
 }
 
-.maincontents .mainslider .rollimg .imgbox > img {
+.rollimg .imgbox > img {
      max-width: 100%;
 }
 
-.maincontents .mainslider .rollimg > strong {
+.rollimg > strong {
      display: block;
      font-size: 15px;
      color: #666;
 }
-.maincontents .mainslider .rollimg .textbox {
+
+.rollimg .textbox {
      font-size: 13px;
      color: #ababab;
 }
@@ -700,6 +712,164 @@ footer{
      padding-left: 16px;
 }
 
+.bookpage .subpageslider {
+     padding: 20px 20px 10px 20px;
+     background-color: #f5f5f5;
+}
+
+.bookpage .subpageslider .slick-arrow {
+     margin-top: -35px;
+}
+
+.bookpage .subpageslider .rollimg > strong {
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
+.bookpage .subpageslider .rollimg.active .imgbox{
+     display: block;
+     border: solid 3px #d1e0e5;
+}
+
+.bookpage .bookdetail {
+     margin-top: 50px;
+} 
+
+.bookpage .bookdetail .booktitle{
+     padding-bottom: 20px;
+     border-bottom: solid 1px #ddd;
+     font-size: 25px;
+     color: #17a2b8;
+}
+
+.bookpage .bookdetail .booktitle > span{
+     display: block;
+     font-size: 13px;
+     color: #ababab;
+}
+
+.bookpage .bookdetail .book-info {
+     display: flex;
+     padding: 50px 30px;
+}
+
+.bookpage .bookdetail .book-info .imgview {
+     max-width: 260px;
+}
+.bookpage .bookdetail .book-info .imgview img {
+     width: 100%;
+}
+
+.bookpage .bookdetail .book-info .imgview .bookbtns {
+     display:flex;
+     justify-content: space-between;
+     margin-top: 12px;
+     max-width: 260px;
+}
+
+.btn-lightgray {
+     background-color: #afafaf;
+     color: #fff;
+     height: 30px;
+     font-size: 12px;
+     line-height: 28px;
+     border-radius: 0;
+}
+
+.bookpage .bookdetail .book-info .imgview .bookbtns .btn-lightgray {
+     width: 49%;
+}
+
+.bookpage .bookdetail .book-info .imgview .bookbtns .btn-lightgray .bi::after {
+     margin: -2px 2px 0 0;
+}
+
+.bookpage .bookdetail .book-info .infolist {
+     flex:1;
+     padding: 0 20px;
+}
+
+.bookpage .bookdetail .book-info .infolist li {
+     margin-bottom: 22px;
+     font-size: 16px;
+}
+
+.bookpage .bookdetail .book-info .infolist li .label,
+.bookpage .bookdetail .book-info .infolist li .infocontent{
+     display: inline-block;
+}
+
+.bookpage .bookdetail .book-info .infolist li .label{
+     width: 150px;
+     font-weight: 900;
+}
+.bookpage .bookdetail .book-info .infolist li .label::after{
+     content: "";
+     display: block;
+     width: 18px;
+     height: 18px;
+     background: url("/images/file-text.svg") no-repeat left center/100%;
+     opacity: 0.3;
+     position: absolute;
+     left: 0;
+     top: 4px;
+}
+
+.bookpage .bookdetail .book-info .infolist li .infocontent {
+     color: #222;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTap {
+     display: flex;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTap .btn-group-toggle {
+     flex: 1 1 auto;
+     height: 40px;
+     border-left: solid 1px #ddd;
+     background-color: #eaeaea;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTap .btn-detailtap {
+     color: #aeaeae;
+     font-size: 14px;
+     text-align: center;
+     line-height: 40px;
+     border-radius: 0;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTap .btn-detailtap::before {
+     margin: -2px 2px 0 0;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTap .btn-group-toggle:nth-of-type(1){
+     border-left: none;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTap .btn-detailtap.active {
+     background-color: #606060;
+     color: #fff;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTapCon { 
+     padding: 30px;
+}
+.bookpage .bookdetail .book-detailinfo .detailTapCon > p {
+     margin-bottom: 20px;
+}
+.bookpage .bookdetail .book-detailinfo .detailTapCon .tapcontit{ 
+     margin-bottom: 20px;
+     font-size: 18px;
+     color: #7952b3;
+     font-weight: 900;
+}
+
+.bookpage .bookdetail .book-detailinfo .detailTapCon .tapcontit > strong {
+     color: #7952b3;
+     font-size: 24px;
+     font-weight: 900;
+}
+
 @media screen and (max-width: 1024px) {
      .system > button {
           width: 25px;
@@ -861,7 +1031,46 @@ footer{
      .maincontents .notice .noticebox .newsitem span{
           display: block;
      }
+
      .subpage .contentbox .titlebar > h1 {
           font-size: 20px;
+     }
+
+     .bookpage .bookdetail .book-info {
+          display: block;
+          padding: 20px 0;
+     }
+     .bookpage .bookdetail .book-info .imgview{
+          margin: 0 auto;
+     }
+     .bookpage .bookdetail .book-info .infolist{
+          padding: 0;
+          margin-top: 20px;
+     }
+     .bookpage .bookdetail .book-info .infolist li{
+          font-size: 14px;
+     }
+     .bookpage .bookdetail .book-info .infolist li .label{
+          width: 90px;
+     }
+     .titlebar > h1 {
+          font-size: 20px;
+     }
+     .bookpage .bookdetail .book-detailinfo .detailTap {
+          flex-wrap: wrap;
+     }
+     .bookpage .bookdetail .book-detailinfo .detailTap .btn-group-toggle {
+          flex-basis: 33.3%;
+          flex-shrink: 0;
+     }
+     .bookpage .bookdetail .book-detailinfo .detailTap .btn-group-toggle:nth-of-type(4) {
+          border-left: none;
+     }
+     .bookpage .bookdetail .book-detailinfo .detailTapCon{
+          padding: 20px 0;
+     }
+     .bookpage .bookdetail .book-detailinfo .detailTapCon .tapcontit,
+     .bookpage .bookdetail .book-detailinfo .detailTapCon .tapcontit > strong{
+          font-size: 15px;
      }
 }
